@@ -1,0 +1,24 @@
+.cardData{
+    background: #EDEDED;
+    width: 176px;
+    height: 16px;
+    display: flex;
+    border-radius: 4px;
+    align-items: center;
+    padding: 8px;
+    margin: 5px 0px;
+}
+
+.cardImageContainer{
+    display: flex;
+}
+
+.cardText{
+    display: flex;
+    color: #757575;
+    font-size: 10px;
+}
+
+.dataText{
+    margin-left: auto;
+}
