@@ -34,3 +34,10 @@
 .breadcrumbs__link--active{
     color: #969696;
 }
+
+@media only screen and (max-width:500px) {
+    /* For Mobile Phones: */
+    .breadcrumbs{
+        margin: 0px 14px;
+    }
+}

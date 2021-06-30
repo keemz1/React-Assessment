@@ -1,6 +1,6 @@
 .card{
     width: 215px;
-    height: 282px;
+    height: 292px;
     background: #FFFFFF;
     border-radius: 8px;
     margin: 10px 10px;
@@ -11,7 +11,11 @@
 }
 
 .cardDataContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 96px;
+    margin: 16px 0px;
 }
 
 .cardImageContainer{
@@ -74,13 +78,58 @@
     height: 24px;
     width: 184px;
     padding: 0px;
-    margin: 8px;
+    margin: 4px;
 }
 
 .cardDetailsSub{
     display: flex;
+    width: 184px;
+    height: 14px;
+    margin: 5px 0px;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.cardDateGenderContainer{
+    display: flex;
+    height: 14px;
+}
+
+
 .birthdateTxt{
-    margin: 0px;
+    display: flex;
+    margin: 0px 2px;
+}
+
+.speciesTxt{
+    display: flex;
+    margin: 0px 8px;
+}
+
+@media only screen and (max-width:800px) {
+    /* For Tablets */
+    .card{
+        margin-left: 0px;
+        margin-right: 20px;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    /* For Mobile Phones */
+    .card{
+        width: 358px;
+        margin: 10px 24px;
+    }
+
+    .cardDetails{
+        width: 338px;
+    }
+
+    .cardDataContainer{
+        width: 338px;
+    }
+
+    .cardInnerBar{
+        width: 336px;
+    }
 }

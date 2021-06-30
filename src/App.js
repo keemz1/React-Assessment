@@ -1,6 +1,7 @@
 import {useEffect,useState} from 'react'
 import './App.css';
 import CardContainer from './Components/CardContainer';
+import CardDetail from './Components/CardDetail';
 import Head from './Components/Head';
 import Nav from './Components/Nav';
 import Search from './Components/Search';
@@ -11,23 +12,40 @@ import {
   Link
 } from "react-router-dom";
 
-export default function App() {
+function App() {
   const [search, setSearch] = useState('')
   const [list, setList] = useState([])
   const [sort, setSort] = useState(false)
+  const [sortDesc, setSortDesc] = useState(false)
+
+  const Home = () =>(
+    <div>
+      <Search list={list} setList={setList}
+       search={search} setSearch={setSearch} 
+       sort={sort} setSort={setSort} 
+       setSortDesc={setSortDesc} sortDesc={sortDesc}/>
+        <CardContainer list={list} setList={setList} 
+        search={search} setSearch={setSearch} sort={sort}
+        setSortDesc={setSortDesc} sortDesc={sortDesc}
+        />
+    </div>
+  );
 
   return (
     <div className='app'>
       <Head/>
       <Router>
         <Nav/>
-        {/* <Route path='' exact component={}/>
-        <Route path='' component={}/> */}
+        <Switch>
+          <Route path='/' exact component={Home}/>
+          <Route path='/cardDetails' component={CardDetail}/>
+        </Switch>
       </Router>
-      <Search list={list} setList={setList} search={search} setSearch={setSearch} setSort={setSort}/>
-      <CardContainer list={list} setList={setList} search={search} setSearch={setSearch} sort={sort}/>
+      
       {/* <div className='box'></div>
       <div className='box'></div> */}
     </div>
   )
 }
+
+export default App;

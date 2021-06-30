@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function LoadMoreBtn({onClick}) {
     return (
-        <button>
-            
+        <button className='btnLoadMore' onclick={onClick}>
+            Load More
         </button>
     )
 }

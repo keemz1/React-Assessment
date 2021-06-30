@@ -118,3 +118,37 @@ select {
 .decButton{
     border-radius: 0px 4px 4px 0px;
 }
+
+
+@media only screen and (max-width:800px) {
+    /* For Tablets */
+    .searchContainer{
+        flex-direction: column;
+        align-items: flex-start;
+        width: 456px;
+        margin: 24px 0px;
+    }
+
+    .searchbar{
+        width: 396px;
+    }
+
+    .searchFrame2{
+        margin: 8px 0px;
+    }
+
+    .txtSortBy{}
+}
+
+@media only screen and (max-width:450px) {
+    /* For Mobile Phones */
+    .searchContainer{
+        align-items: flex-start;
+        margin: 0px 23px;
+        width: 358px;
+    }
+    
+    .searchbar{
+        width: 300px;
+    }
+}

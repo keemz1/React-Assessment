@@ -89,3 +89,53 @@
 .imgHead{
     margin: 0px 8px;
 }
+
+@media only screen and (max-width:800px) {
+    /* For tablets: */
+    .headContainer{
+        width: 456px;
+        align-self: center;
+    }
+
+    .heading1, .heading2{
+        display: none;
+    }
+
+    .headLowerBar{
+        width: 456px;
+    }
+
+    .Frame2{
+        margin: 0px;
+    }
+
+    .Frame3{
+        margin: 0px 85px;
+    }
+  }
+
+  @media only screen and (max-width:500px) {
+    /* For Mobile Phones: */
+    .headContainer{
+        width: 358px;
+        align-self: flex-start;
+        padding: 0px 10px;
+    }
+
+    .headLowerBar{
+        width: 358px;
+    }
+
+    .Frame3{
+        margin:  0px 8px;
+    }
+
+    .btnDecks{
+        padding: 2px 8px;
+    }
+    
+    .btnallcards{
+        width: 100px;
+    }
+
+}

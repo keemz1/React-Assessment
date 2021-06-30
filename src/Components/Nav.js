@@ -7,10 +7,10 @@ export default function Nav({name}) {
         <nav className='breadcrumbs'>
             <ul >
                 <li className='breadcrumbs_item'>All Cards</li>
-                <Link className='breadcrumbs__link'  to='selectCard'>
+                <Link className='breadcrumbs__link'  to='/'>
                     <li className='breadcrumbs_item'>Select A Card</li>
                 </Link>
-                <Link className='breadcrumbs__link' to='cardDetails'>
+                <Link className='breadcrumbs__link' to='/cardDetails'>
                     <li className='breadcrumbs_item'>{name} Details</li>
                 </Link>
             </ul>

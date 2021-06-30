@@ -5,19 +5,20 @@ import cardImage from '../Assets/Card.svg'
 import planetImage from '../Assets/Homeworld.svg'
 import vehicleImage from '../Assets/Vehicle.svg'
 import starshipImage from '../Assets/Starship.svg'
-import useSWAPIStorage from './Custom Hooks/useSWAPIStorage'
+import useSWAPIStorage from './Custom Hooks/swapiStorage'
+import { Link } from 'react-router-dom'
 
 export default function Card({name,gender,birth_year,species,planet,vehicle, starship}) {
 
     
 
-    function FilterCards(name) {
-        // let displayPerson = list.filter(people => people.name === name)
-        // console.log(displayPerson)
+    function sendCardDetails() {
+        
     }
 
     return (
-        <button className='card' onClick={()=> FilterCards(name)}>
+        <Link to='/cardDetails' >
+        <button className='card' onClick={()=>sendCardDetails()}>
             <div className='cardHead'>
                 <div className='cardImageContainer'>
                 <img className='cardImages' src={cardImage} alt=''/>
@@ -27,11 +28,15 @@ export default function Card({name,gender,birth_year,species,planet,vehicle, sta
             <div className='cardBody'>
                 <div className='cardDetails'>
                     <div className='cardDetailsSub'>
-                        <div className='cardImageContainer'>
-                            <img className='cardImages genderImage' src={gender} alt=''/>
+                        <div className='cardDateGenderContainer'>
+                            <div className='cardImageContainer'>
+                                <img className='cardImages genderImage' src={gender} alt=''/>
+                            </div>
+                                <p className='birthdateTxt'>{birth_year}</p>
                         </div>
-                        <p className='birthdateTxt'>{birth_year}</p>
-                        <p>{species}</p>
+                        <div>
+                            <p className='speciesTxt'>{species}</p>
+                        </div>
                     </div>
                     <div className='cardInnerBar'> </div>
                 </div>
@@ -56,5 +61,6 @@ export default function Card({name,gender,birth_year,species,planet,vehicle, sta
                 </div>
             </div>
         </button>
+    </Link>
     )
 }

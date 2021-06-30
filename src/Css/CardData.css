@@ -23,3 +23,10 @@
     margin-left: auto;
     color: #3B3B3B;
 }
+
+@media only screen and (max-width:500px) {
+    /* For Mobile Phones */
+    .cardData{
+        width: 320px;
+    }
+}

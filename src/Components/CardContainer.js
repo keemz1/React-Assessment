@@ -4,18 +4,23 @@ import maleGender from '../Assets/Gender-Male.svg'
 import femaleGender from '../Assets/Gender-Female.svg'
 import droid from '../Assets/droid.svg'
 import '../Css/CardContainer.css';
-import useSWAPIStorage from './Custom Hooks/useSWAPIStorage'
 import LoadBtn from './LoadMoreBtn'
+import swapiStorage from './Custom Hooks/swapiStorage'
+import useSWList from './Custom Hooks/useSWList'
 
-export default function CardContainer({list, setList, search, setSearch,sort}) {
-    const {url, swList,setUrl,setSWList }= useSWAPIStorage('','', 1);
-
+export default function CardContainer({list, setList, search, setSearch,sort, setSort, sortDesc, setSortDesc}) {
+    const [count, setCount] = useState(0)
+    const [swList, setSWList] = useState([])
 
     function getSWAPIValues(value) {
-        const newValue = fetch(value)
-        .then(response => response.json())
-        .then(json => json.name)
-        console.log(newValue)
+        // const newValue = fetch(value)
+        // .then(response => response.json())
+        // .then(json => json.name)
+        // console.log(newValue)
+    }
+
+    function loadMoreSWCharcaters() {
+        setCount(count + 1 )
     }
 
     function getGender(gender) {
@@ -30,60 +35,71 @@ export default function CardContainer({list, setList, search, setSearch,sort}) {
         }
     }
 
-    function sortAscending() {
-        swList.sort((a,b) => 
-        {if(a.name < b.name){
-            return -1;
+    async function getList() {
+        let _list = await swapiStorage('https://swapi.dev/api/people/?page=');
+        if (sort) {
+            _list.sort((a,b) =>{
+                if(a.name < b.name){
+                    return -1;
+                }
+                if(a.name > b.name){
+                    return 1
+                }
+                return 0
+            })
+            setSWList([..._list])
         }
-        if(a.name > b.name){
-            return 1
+        else if(sortDesc){
+            _list.sort((a,b) =>{
+                if(a.name < b.name){
+                    return -1;
+                }
+                if(a.name > b.name){
+                    return 1
+                }
+                return 0
+            }).reverse()
+            setSWList([..._list])
         }
-        return 0
-    })
-    }
-    function sortDescending() {
-        swList.sort().reverse()
+        setSWList([..._list])
     }
 
     useEffect(() => {
-        if (sort) {
-            sortAscending()
-        }
-        else{
-            sortDescending()
-        }
-    }, [sort,swList])
+        getList()
+    }, [])
 
-console.log(swList)
 
+    console.log(swList)
     return (
         <div className='cardContainer'>
         {(search && list)?
-            list?.map(people =>(
+            list?.map((people,index) =>(
                 <Card
-                    key={people.url}
-                    name={people.name}
-                    species={getSWAPIValues(people.species)}
-                    gender={getGender(people.gender)}
-                    birth_year={people.birth_year}
-                    vehicle={people.vehicles.length}
-                    starship={people.starships.length}
+                    key={`id: ${index}`}
+                    name={people?.name}
+                    species={people?.species}
+                    planet={people?.homeworld}
+                    gender={getGender(people?.gender)}
+                    birth_year={people?.birth_year}
+                    vehicle={people?.vehicles?.length}
+                    starship={people?.starships?.length}
                 />
             ) || 'No Data Found?!'): 
-         swList?.map(people =>{
+         swList?.length !== 0 ?
+         swList?.map((people,index) =>{
             return(
                 <Card
-                    key={people.url}
-                    name={people.name}
-                    species={getSWAPIValues(people.species)}
-                    gender={getGender(people.gender)}
-                    birth_year={people.birth_year}
-                    vehicle={people.vehicles.length}
-                    starship={people.starships.length}
+                    key={`id: ${index}`}
+                    name={people?.name}
+                    species={people?.species}
+                    planet={people?.homeworld}
+                    gender={getGender(people?.gender)}
+                    birth_year={people?.birth_year}
+                    vehicle={people?.vehicles?.length}
+                    starship={people?.starships?.length}
                 />
             )
-        })}
-        <LoadBtn/>
+        }):<p className='loadingTxt'>Loading...</p>}
         </div>
     )
 }

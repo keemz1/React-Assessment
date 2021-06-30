@@ -3,3 +3,37 @@
     width: 1176px;
     flex-wrap: wrap;
 }
+
+.btnLoadMore{
+    border: none;
+    background: #B8B8B8;
+    border-radius: 4px;
+    padding: 8px 16px;
+    margin: 24px;
+    margin-left: 10px;
+}
+
+.btnLoadMore:hover{
+    background-color: black;
+    color: white;
+}
+
+.loadingTxt{
+    display: flex;
+    margin: 10px;
+    font-size: 24px;
+    font-weight: lighter;
+}
+
+@media only screen and (max-width:800px) {
+    /* For Tablets */
+    .cardContainer{
+        width: 476px;
+    }
+}
+@media only screen and (max-width:500px) {
+    /* For Mobile Phones */
+    .cardContainer{
+        width: 358px;
+    }
+}
