@@ -1,8 +1,9 @@
 .headContainer{
-    margin: 48px 0px;
+    margin: 48px 10px;
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    width: 1176px;
+    width: 1156px;
     height: 50px;
     white-space: nowrap;
 }
@@ -11,19 +12,22 @@
     display: flex;
     width: 212px;
     height: 32px;
-    /* margin: 16px 0px; */
+    margin: 5px 0px;
 }
 
 .headLowerBar{
     display: flex;
-    width: 1176px;
+    width: 1156px;
     height: 2px;
     background: #B8B8B8;
-    border-radius: 2px;
+    border-radius: 2px; 
 }
 
 .homeName{
     font-size: 16px;
+    font-size: 16px;
+    color: #3B3B3B;
+    line-height: 16px;
     font-style: normal;
     font-weight: normal;
     align-items: center;
@@ -43,20 +47,45 @@
 .Frame3{
     display: flex;
     box-sizing: border-box;
-    margin: 0px 190px;
+    margin: 0px 72px;
     border: 1px solid #B8B8B8;
+    align-items: center;
+    border-radius: 4px;
+    padding: 8px 12px;
+}
+
+.heading2{
+    color: #818181;
+    font-style: normal;
+    font-weight: normal;
 }
 
 .btnallcards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3B3B3B;
     width: 112px;
     height: 32px;
     background-color: white;
     border-radius: 4px;
+    border: none;
 }
 
 .btnDecks{
-    width: 92px;
+    display: flex;
     height: 32px;
-    background: #E4E4E4;
+    padding: 8px 12px;
+    line-height: 16px;
+    margin: 0px 8px;
+    color: #3B3B3B;
+    align-items: center;
+    justify-content: center;
+    background-color: #dadada;
     border-radius: 4px;
+    border: none;
+}
+
+.imgHead{
+    margin: 0px 8px;
 }

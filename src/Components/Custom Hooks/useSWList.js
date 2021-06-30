@@ -1,7 +1,6 @@
-import {useState,useEffect} from 'react'
+import {useState} from 'react'
 
 export default function useSWList(initialList) {
-    useEffect(() => {
-        console.log(initialList)
-    }, [initialList])
+    const [list, setList] = useState(initialList);
+    return [list,setList]
 }

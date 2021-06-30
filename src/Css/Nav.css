@@ -1,0 +1,36 @@
+.breadcrumbs{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.breadcrumbs ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.breadcrumbs_item{
+    display: inline;
+}
+
+.breadcrumbs a::before{
+    content: url(../Assets/Vector.png);
+    width: 100px;
+    color: #444444;
+    margin: 0 5px;
+}
+
+.breadcrumbs a:first-child::before{
+    content: '';
+}
+
+.breadcrumbs__link{
+    text-decoration: none;
+    color: #757575;
+}
+
+.breadcrumbs__link--active{
+    color: #969696;
+}

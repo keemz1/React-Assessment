@@ -9,16 +9,16 @@ export default function Head() {
             <div className='headInfoFrame'>
                 <div className='Frame1'>
                     <button className='btnallcards' type='button'>
-                    <img src={cardImage} alt=''/>
+                    <img className='imgHead' src={cardImage} alt=''/>
                         All Cards
                     </button>
                     <button className='btnDecks' type='button'>
-                    <img src={deckImage} alt=''/>
+                    <img className='imgHead' src={deckImage} alt=''/>
                         Decks
                     </button>
                 </div>
                 <div className='Frame2'>
-                    <span>SW-</span><span>API Deck Builder</span>
+                    <span className='heading1'>SW-</span><span className='heading2'>API Deck Builder</span>
                 </div>
                 <div className='Frame3'>
                     <p className='homeName'>Akeem Hendricks</p>

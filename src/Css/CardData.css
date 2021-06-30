@@ -1,7 +1,7 @@
 .cardData{
     background: #EDEDED;
     width: 176px;
-    height: 16px;
+    height: 12px;
     display: flex;
     border-radius: 4px;
     align-items: center;
@@ -21,4 +21,5 @@
 
 .dataText{
     margin-left: auto;
+    color: #3B3B3B;
 }

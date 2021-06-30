@@ -3,11 +3,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 24px 10px
+    margin: 24px 10px;
+    width: 1156px;
 }
 
 .searchbar{
-    width: 847px;
+    display: flex;
+    width: 780px;
     height: 22px;
     border-radius: 4px 0px 0px 4px;
     border: none;
@@ -18,26 +20,76 @@
     color: #757575;
 }
 
-.searchSelect{
+/* .searchSelect{
     background-color: white;
     border-radius: 6px;
-}
+    border: 1px solid #B8B8B8;
+    box-sizing: border-box;
+    margin: 0px 6px;
+    padding: 5px;
+    width: 139px;
+} */
+
+select {
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #FFFFFF;
+    background-image: none;
+  }
+  /* Custom Select */
+  .select {
+    position: relative;
+    display: flex;
+    width: 139px;
+    height: 32px;
+    line-height: 2;
+    background: #2c1e00;
+    overflow: hidden;
+    border-radius: .25em;
+    margin: 0px 6px;
+  }
+  select {
+    flex: 1;
+    padding: 0 .5em;
+    color: #3B3B3B;
+    cursor: pointer;
+  }
+  /* Arrow */
+  .select::after {
+    content: url(../Assets/arrow-down.png);
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #969696;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+  }
 
 .searchFrame1{
     display: flex;
+    margin-right: 0px;
 }
 
 .searchFrame2{
     display: flex;
     width: 321px;
     height: 32px;
-    margin: 0px 8px;
+    margin: 0px 0px 0px 8px;
 }
 
 .txtSortBy{
     display: flex;
     justify-content: center;
     align-items: center;
+    white-space: nowrap;
+    font-size: 16px;
+    margin: 0px 6px;
 }
 
 .btnSearch{
@@ -50,4 +102,19 @@
 
 .btnSearch:hover{
     background-color: #969696;
+}
+
+.ascButton, .decButton{
+    background: #FFFFFF;
+    border: 1px solid #B8B8B8;
+    padding: 8px 10px;
+    margin: 0px 0px;
+}
+
+
+.ascButton{
+    border-radius: 4px 0px 0px 4px;
+}
+.decButton{
+    border-radius: 0px 4px 4px 0px;
 }

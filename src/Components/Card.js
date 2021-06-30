@@ -8,16 +8,16 @@ import starshipImage from '../Assets/Starship.svg'
 import useSWAPIStorage from './Custom Hooks/useSWAPIStorage'
 
 export default function Card({name,gender,birth_year,species,planet,vehicle, starship}) {
-    const {url, list,setUrl,setList }= useSWAPIStorage('https://swapi.dev/api/people',[]);
 
     
 
-    function FilterCards() {
-        
+    function FilterCards(name) {
+        // let displayPerson = list.filter(people => people.name === name)
+        // console.log(displayPerson)
     }
 
     return (
-        <button className='card' onClick={()=> FilterCards()}>
+        <button className='card' onClick={()=> FilterCards(name)}>
             <div className='cardHead'>
                 <div className='cardImageContainer'>
                 <img className='cardImages' src={cardImage} alt=''/>

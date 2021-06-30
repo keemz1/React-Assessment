@@ -1,18 +1,20 @@
 import {useState,useEffect} from 'react'
+import useSWList from './useSWList';
 
-export default function useSWAPIStorage(urlState,listState) {
-    const [url, setUrl] = useState(urlState);
-    const [list, setList] = useState([]);
-    const [search, setSearch] = useState();
+
+
+export default function useSWAPIStorage(urlState,listState,count) {
+    const charactersURL = `https://swapi.dev/api/people/?page=${count}`
+    const [url, setUrl] = useState(charactersURL);
+    const [swList, setSWList] = useSWList([]);
     useEffect(() => {
         GetURL()
-    }, [url])
-
+    }, [count])
 
     function GetURL() {
         fetch(url)
         .then(response => response.json())
-        .then(json => setList([...json.results]))
+        .then(json => setSWList([...swList, ...json.results]))
     }
-    return {url,list,search,setUrl,setList,setSearch}
+    return {url,swList,setUrl,setSWList}
 }
